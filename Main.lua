@@ -52,4 +52,23 @@ Tabs.Main:AddToggle("AutoBrainrot", {Title = "Auto Brainrot (Perfect Kick)", Def
 Tabs.Main:AddToggle("AutoStrength", {Title = "Auto Farm Strength (Force x2)", Default = false})
 Tabs.Main:AddToggle("AutoCash", {Title = "Auto Collect Cash", Default = false})
 
+Fluent:Notify({Title = "HUB CHARGÉ", Content = "Script prêt par famillels0523-sys !", Duration = 5})
+
+        if Options.AutoCash and Options.AutoCash.Value then
+            local hrp = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if hrp then
+                for _, v in pairs(workspace:GetChildren()) do
+                    if v.Name:find("Cash") or v:FindFirstChild("TouchInterest") then
+                        v.CFrame = hrp.CFrame
+                    end
+                end
+            end
+        end
+    end
+end)
+
+Tabs.Main:AddToggle("AutoBrainrot", {Title = "Auto Brainrot (Perfect Kick)", Default = false})
+Tabs.Main:AddToggle("AutoStrength", {Title = "Auto Farm Strength (Force x2)", Default = false})
+Tabs.Main:AddToggle("AutoCash", {Title = "Auto Collect Cash", Default = false})
+
 Fluent:Notify({Title = "HUB CHARGÉ", Content = "Script prêt !", Duration = 5})
